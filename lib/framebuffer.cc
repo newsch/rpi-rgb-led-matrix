@@ -72,7 +72,7 @@ Framebuffer::Framebuffer(int rows, int columns, int parallel,
     scan_mode_(scan_mode),
     swap_green_blue_(swap_green_blue), inverse_color_(inverse_color),
     pwm_bits_(kBitPlanes), do_luminance_correct_(true), brightness_(100),
-    double_rows_(rows / SUB_PANELS_), row_mask_(double_rows_ - 1),
+    double_rows_(rows), row_mask_(double_rows_ - 1),
     shared_mapper_(mapper) {
   assert(hardware_mapping_ != NULL);   // Called InitHardwareMapping() ?
   assert(shared_mapper_ != NULL);  // Storage should be provided by RGBMatrix.
